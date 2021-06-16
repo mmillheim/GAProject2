@@ -1,0 +1,41 @@
+[
+    {
+        "Users":[
+
+            {
+                "name": "Test Admin",
+                "role": "Administrator"
+            },
+            {
+                "name": "Test Purchaser",
+                "role": "Purchaser"
+            },
+            {
+                "name": "Test User",
+                "role": "User"
+            }
+        ],
+        "Items":[
+            {
+                "partNumber": "123456abc",
+                "description": "item 1",
+                "unitOfMeasure": "each",
+                "unitOfPurchase": "each",
+                "unitOfSale": "each",
+                "minimumOnHand": 2,
+                "maximumOnHand": 20,
+                "quantityBearing": true,
+                "buyToOrder": false,
+                "stockItem": true,
+                "category": "Generic Items",
+                "group": "UoM of each",
+                "safetyStock": 1,
+                "leadTime": 14,
+                "cost": 5,
+                "price": 10,
+                "quantity": 15,
+                "expirationDate": "2021-12-31"
+            }
+        ]
+    }
+]
