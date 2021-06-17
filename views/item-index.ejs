@@ -1,0 +1,13 @@
+<h2>
+    <ul>
+        <% items.forEach(item => {%>
+            <li>
+                <div>
+                    <%= item.partNumber %>
+                    <%= item.description %>
+                    <%= item.quantity %>
+                </div>
+            </li>
+        <% }) %>
+    </ul>
+</h2>

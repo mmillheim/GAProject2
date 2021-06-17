@@ -8,7 +8,7 @@ const Vendor = require('../models/vendor-model');
 router.get('/', (req, res) => {
     Item.find({})
     .populate('vendor')
-    .then(items => res.send(items))
+    .then(items => res.render('item-index', {items}))
     .catch(console.log)
 })
 
