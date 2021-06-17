@@ -35,6 +35,36 @@
                 "price": 10,
                 "quantity": 15,
                 "expirationDate": "2021-12-31"
+            },
+            {
+                "partNumber": "1234567abc",
+                "description": "item 2",
+                "unitOfMeasure": "each",
+                "unitOfPurchase": "each",
+                "unitOfSale": "each",
+                "minimumOnHand": 2,
+                "maximumOnHand": 20,
+                "quantityBearing": true,
+                "buyToOrder": false,
+                "stockItem": true,
+                "category": "Generic Items",
+                "group": "UoM of each",
+                "safetyStock": 1,
+                "leadTime": 14,
+                "cost": 5,
+                "price": 10,
+                "quantity": 15,
+                "expirationDate": "2021-12-31"
+            }
+        ],
+        "Vendors":[
+            {
+                "name": "Test Vendor"
+            }
+        ],
+        "Transactions":[
+            {
+                "name": "Test Vendor"
             }
         ]
     }

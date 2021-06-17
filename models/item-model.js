@@ -22,7 +22,11 @@ const ItemSchema = new mongoose.Schema(
         cost: Number,
         price: Number,
         quantity: Number,
-        expirationDate: Date
+        expirationDate: Date,
+        vendor:{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Vendor'
+        }
     },
     {timestamps: true}
 )
