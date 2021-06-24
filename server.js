@@ -4,9 +4,11 @@ const cors = require('cors');
 const ejsLayouts = require('express-ejs-layouts');
 const path = require('path')
 const sassMiddleware = require('node-sass-middleware');
+const methodOverride = require('method-override')
 
 
 app.set('view engine', 'ejs');
+app.use(methodOverride('_method'))
 app.use(ejsLayouts)
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

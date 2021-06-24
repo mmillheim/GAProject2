@@ -1,0 +1,13 @@
+<h2>Add a new item</h2>
+<form action="/items" method="POST">
+  <div class="form-group">
+    <label for="description">Description:</label>
+    <input type="text" id="description" name="description" class="form-control" />
+    <label for="partNumber">Part Number:</label>
+    <input type="text" id="partNumber" name="partNumber" class="form-control" />
+    <label for="quantity">Quantity:</label>
+    <input type="text" id="quantity" name="quantity" class="form-control" />
+  </div>
+  <input type="submit" value="Create" class="btn btn-primary" />
+  <a href="/items" class="btn btn-secondary">Cancel</a>
+</form>

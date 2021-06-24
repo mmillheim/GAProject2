@@ -46,7 +46,7 @@ body {
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
-  background-color: #0684d8;
+  background-color: #8dd7f4;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
@@ -453,7 +453,7 @@ progress {
 
 .img-thumbnail {
   padding: 0.25rem;
-  background-color: #0684d8;
+  background-color: #8dd7f4;
   border: 1px solid #dee2e6;
   border-radius: 0.25rem;
   max-width: 100%;
@@ -1778,9 +1778,9 @@ textarea.form-control-lg {
   .form-range:focus {
     outline: 0; }
     .form-range:focus::-webkit-slider-thumb {
-      box-shadow: 0 0 0 1px #0684d8, 0 0 0 0.25rem rgba(13, 110, 253, 0.25); }
+      box-shadow: 0 0 0 1px #8dd7f4, 0 0 0 0.25rem rgba(13, 110, 253, 0.25); }
     .form-range:focus::-moz-range-thumb {
-      box-shadow: 0 0 0 1px #0684d8, 0 0 0 0.25rem rgba(13, 110, 253, 0.25); }
+      box-shadow: 0 0 0 1px #8dd7f4, 0 0 0 0.25rem rgba(13, 110, 253, 0.25); }
   .form-range::-moz-focus-outer {
     border: 0; }
   .form-range::-webkit-slider-thumb {
@@ -2924,8 +2924,8 @@ textarea.form-control-lg {
   .nav-tabs .nav-link.active,
   .nav-tabs .nav-item.show .nav-link {
     color: #495057;
-    background-color: #0684d8;
-    border-color: #dee2e6 #dee2e6 #0684d8; }
+    background-color: #8dd7f4;
+    border-color: #dee2e6 #dee2e6 #8dd7f4; }
   .nav-tabs .dropdown-menu {
     margin-top: -1px;
     border-top-left-radius: 0;
@@ -3351,7 +3351,7 @@ textarea.form-control-lg {
   font-size: 1rem;
   color: #212529;
   text-align: left;
-  background-color: #0684d8;
+  background-color: #8dd7f4;
   border: 0;
   border-radius: 0;
   overflow-anchor: none;
@@ -3391,7 +3391,7 @@ textarea.form-control-lg {
   margin-bottom: 0; }
 
 .accordion-item {
-  background-color: #0684d8;
+  background-color: #8dd7f4;
   border: 1px solid rgba(0, 0, 0, 0.125); }
   .accordion-item:first-of-type {
     border-top-left-radius: 0.25rem;
@@ -5702,7 +5702,7 @@ textarea.form-control-lg {
   background-color: #212529 !important; }
 
 .bg-body {
-  background-color: #0684d8 !important; }
+  background-color: #8dd7f4 !important; }
 
 .bg-white {
   background-color: #fff !important; }

@@ -1,0 +1,13 @@
+<div>
+    <h2>Item:</h2>
+    <%= item.partNumber %>
+    <%= item.description %>
+    <%= item.quantity %>
+    <% if(item.vendor) { %>
+    <a href="../vendors/<%=item.vendor.id%>">
+        <%= item.vendor.name %>
+    </a>
+    <% } %>
+
+    <a class="btn btn-primary" href="/items/<%=item.id%>/edit">Edit</a>
+</div>

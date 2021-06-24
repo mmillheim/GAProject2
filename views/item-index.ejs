@@ -1,11 +1,17 @@
 <h2>
+    <a href="items/new" class="btn btn-primary">New Item</a>
     <ul>
         <% items.forEach(item => {%>
             <li>
                 <div>
-                    <%= item.partNumber %>
-                    <%= item.description %>
+                    <a href="items/<%=item.id%>"><%= item.partNumber %></a>
+                    <a href="items/<%=item.id%>"><%= item.description %></a>
                     <%= item.quantity %>
+                    <% if(item.vendor) { %>
+                    <a href="../vendors/<%=item.vendor.id%>">
+                        <%= item.vendor.name %>
+                    </a>
+                    <% } %>
                 </div>
             </li>
         <% }) %>

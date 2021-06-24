@@ -1,0 +1,18 @@
+<h2>Edit Item</h2>
+<form action="/items/<%=item.id%>/?_method=put" method="POST">
+  <div class="form-group">
+    <label for="description">Description:</label>
+    <input type="text" id="description" name="description" class="form-control" value="<%=item.description%>"/>
+    <label for="partNumber">Part Number:</label>
+    <input type="text" id="partNumber" name="partNumber" class="form-control" value="<%=item.partNumber%>"/>
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" class="form-control"value="<%=item.quantity%>"/>
+  </div>
+  <input type="submit" value="Update" class="btn btn-primary" />
+
+  <a href="/items" class="btn btn-secondary">Cancel</a>
+</form>
+
+<form action="/items/<%=item.id%>?_method=DELETE" method="POST" class="d-inline">
+  <input type="submit" value="Delete" class="btn btn-danger" />
+</form>
