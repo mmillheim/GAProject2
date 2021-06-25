@@ -1,19 +1,51 @@
-<h2>
-    <a href="items/new" class="btn btn-primary">New Item</a>
-    <ul>
+
+<a href="items/new" class="btn btn-primary">New Item</a>
+<!-- <ul>
+    <% items.forEach(item => {%>
+        <li>
+            <div>
+                <a href="items/<%=item.id%>"><%= item.partNumber %></a>
+                <a href="items/<%=item.id%>"><%= item.description %></a>
+                <%= item.quantity %>
+                <% if(item.vendor) { %>
+                <a href="../vendors/<%=item.vendor.id%>">
+                    <%= item.vendor.name %>
+                </a>
+                <% } %>
+            </div>
+        </li>
+    <% }) %>
+</ul> -->
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Part #</th>
+            <th scope="col">Description</th>
+            <th scope="col">QTY</th>
+            <th scope="col">Vendor</th>
+        </tr>
+    </thead>
+    <tbody>
+
         <% items.forEach(item => {%>
-            <li>
-                <div>
+            <tr>
+                <td>
                     <a href="items/<%=item.id%>"><%= item.partNumber %></a>
+                </td>
+                <td>
                     <a href="items/<%=item.id%>"><%= item.description %></a>
+                </td>
+                <td>
                     <%= item.quantity %>
+                </td>
+                <td>
                     <% if(item.vendor) { %>
-                    <a href="../vendors/<%=item.vendor.id%>">
-                        <%= item.vendor.name %>
-                    </a>
-                    <% } %>
-                </div>
-            </li>
+                        <a href="../vendors/<%=item.vendor.id%>">
+                            <%= item.vendor.name %>
+                        </a>
+                        <% } %>
+                </td>    
+            </tr>
         <% }) %>
-    </ul>
-</h2>
+    </tbody>
+</table>
