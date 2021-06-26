@@ -18,24 +18,28 @@ router.get('/', (req, res) => {
 
 //new
 router.get('/new', (req, res) => {
-    res.render('item-new')
+    Vendor.find({})
+    .then(vendors => {
+        res.render('item-new', {vendors})
+    })
 })
 
 //create
 router.post('/', (req, res) => {
     console.log(req.body)
-    // Item.create({
-    //     description: req.body.description,
-    //     partNumber: req.body.partNumber || "?",
-    //     quantity: req.body.quantity || 0
-    // })
-    // .then(result => {
-    //     res.redirect('/items')
-    // })
-    // .catch(err => {
-    //     console.log(err)
-    //     res.send("unable to create item")
-    // })
+    Item.create({
+        description: req.body.description,
+        partNumber: req.body.partNumber || "?",
+        quantity: req.body.quantity || 0,
+        vendor: req.body.vendor
+    })
+    .then(result => {
+        res.redirect('/items')
+    })
+    .catch(err => {
+        console.log(err)
+        res.send("unable to create item")
+    })
 
 })
 
@@ -53,7 +57,21 @@ router.get('/:id', (req, res) => {
 //edit
 router.get('/:id/edit', (req, res) => {
     Item.findById(req.params.id)
-    .then(item => res.render('item-edit', {item}))
+    .then(item => {
+        Vendor.find({})
+        .then(vendors => {
+            if (item.vendor){
+                Vendor.findById(item.vendor)
+                .then(selectedVendor => {
+                    res.render('item-edit', {item, vendors, selectedVendor})
+                })
+                .catch(console.error)
+            } else {
+                res.render('item-edit', {item, vendors, selectedVendor:null})
+            }
+        })
+        .catch(console.error)
+    })
     .catch(err => {
         console.log(err)
         res.send('Could not edit item')
@@ -67,7 +85,8 @@ router.put('/:id', (req, res) => {
         {
             description: req.body.description,
             partNumber: req.body.partNumber,
-            quantity: req.body.quantity
+            quantity: req.body.quantity,
+            vendor: req.body.vendor
         },
         {new: true}
     )

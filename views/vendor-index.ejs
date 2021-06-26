@@ -1,0 +1,39 @@
+
+<a href="vendors/new" class="btn btn-primary">New Vendor</a>
+<!-- <ul>
+    <% vendors.forEach(item => {%>
+        <li>
+            <div>
+                <a href="vendors/<%=item.id%>"><%= item.partNumber %></a>
+                <a href="vendors/<%=item.id%>"><%= item.description %></a>
+                <%= item.quantity %>
+                <% if(item.vendor) { %>
+                <a href="../vendors/<%=item.vendor.id%>">
+                    <%= item.vendor.name %>
+                </a>
+                <% } %>
+            </div>
+        </li>
+    <% }) %>
+</ul> -->
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">URL</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <% vendors.forEach(vendor => {%>
+            <tr>
+                <td>
+                    <a href="vendors/<%=vendor.id%>"><%= vendor.name %></a>
+                </td>
+                <td>
+                    <a href="<%=vendor.url%>"><%= vendor.url %></a>
+                </td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>

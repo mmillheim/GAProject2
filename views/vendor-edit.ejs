@@ -1,0 +1,16 @@
+<h2>Edit Vendor</h2>
+<form action="/vendors/<%=vendor.id%>/?_method=put" method="POST">
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" class="form-control" value="<%=vendor.name%>"/>
+    <label for="URL">URL:</label>
+    <input type="text" id="URL" name="URL" class="form-control" value="<%=vendor.URL%>"/>
+  </div>
+  <input type="submit" value="Update" class="btn btn-primary" />
+
+  <a href="/vendors" class="btn btn-secondary">Cancel</a>
+</form>
+
+<form action="/vendors/<%=vendor.id%>?_method=DELETE" method="POST" class="d-inline">
+  <input type="submit" value="Delete" class="btn btn-danger" />
+</form>

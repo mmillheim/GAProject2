@@ -8,13 +8,17 @@ const VendorSchema = new mongoose.Schema(
         },
         URL: {
             type: String,
-            require: true,
+            require: false,
             validate: {
                 validator: function(url) {
                     return /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)/.test(url);
                 }
-        }
-    }
+            }
+        },
+        items: [{
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'Item'
+        }]
     },
     {timestamps: true}
 )

@@ -23,8 +23,10 @@ app.use(express.static(__dirname + '/public'));
 app.set("port", process.env.PORT || 4000);
 
 const itemController = require('./controllers/item-controller')
+const vendorController = require('./controllers/vendor-controller')
 
 app.use('/items', itemController)
+app.use('/vendors', vendorController)
 
 app.get('/', (req, res) => {
     res.redirect('/items');

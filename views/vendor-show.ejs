@@ -1,0 +1,42 @@
+<div>
+    <h2>Vendor:</h2>
+    <%= vendor.name %>
+    <a href="<%= vendor.url %>">
+        <%= vendor.url %>
+    </a>
+
+    <!-- <% if(vendor.items.count > 0) { %>
+    <a href="../vendors/<%=vendor.vendor.id%>">
+        <%= vendor.vendor.name %>
+    </a>
+    <% } %> -->
+
+    <a class="btn btn-primary" href="/vendors/<%=vendor.id%>/edit">Edit</a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Part #</th>
+                <th scope="col">Description</th>
+                <th scope="col">QTY</th>
+            </tr>
+        </thead>
+        <%if(vendorItems){%>  
+            <tbody>
+                <% vendorItems.forEach(item => {%>
+                    <tr>
+                        <td>
+                            <a href="items/<%=item.id%>"><%= item.partNumber %></a>
+                        </td>
+                        <td>
+                            <a href="items/<%=item.id%>"><%= item.description %></a>
+                        </td>
+                        <td>
+                            <%= item.quantity %>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        <%}%>
+        </table>
+</div>
