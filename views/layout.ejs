@@ -29,12 +29,15 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown link
+                Account
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <% if(locals.user){%>
+                  <li><a class="dropdown-item" href="/user">Profile</a></li>
+                  <li><a class="dropdown-item" href="/logout">Log Out</a></li>
+                <%} else { %>
+                  <li><a class="dropdown-item" href="/login">Log In</a></li>
+                <%}%>
               </ul>
             </li>
           </ul>
