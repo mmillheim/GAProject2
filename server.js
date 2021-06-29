@@ -28,8 +28,16 @@ const vendorController = require('./controllers/vendor-controller')
 app.use('/items', itemController)
 app.use('/vendors', vendorController)
 
+app.get('/welcome', (req, res) => {
+    res.send('welcome')
+})
+
+app.get('/login', (req, res) => {
+    res.send("Please Log In")
+})
+
 app.get('/', (req, res) => {
-    res.redirect('/items');
+    res.redirect('/welcome');
 })
 
 app.listen(app.get("port"), () => {
