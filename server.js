@@ -7,6 +7,38 @@ const sassMiddleware = require('node-sass-middleware');
 const methodOverride = require('method-override');
 var session = require('express-session');
 
+
+
+//express-session
+var sess = {
+    secret: '48cfcd06293d3bbcb116a591526f9d5acae6ab0b2aafdaf1185da9652f8574a4',
+    cookie: {},
+    resave: false,
+    saveUninitialized: true
+};
+if (app.get('env') === 'production') {
+    // Use secure cookies in production (requires SSL/TLS)
+    sess.cookie.secure = true;
+    
+    // Uncomment the line below if your application is behind a proxy (like on Heroku)
+    // or if you're encountering the error message:
+    // "Unable to verify authorization request state"
+    // app.set('trust proxy', 1);
+}
+
+//Auth0
+const { auth } = require('express-openid-connect');
+const { requiresAuth } = require('express-openid-connect');
+
+const config = {
+    authRequired: false,
+    auth0Logout: true,
+    secret: 'a long, randomly-generated string stored in env',
+    baseURL: 'https://levelsapp.herokuapp.com',
+    clientID: '7JUChbVDV0yWzajl4gOh2SOMIajPBlCE',
+    issuerBaseURL: 'https://levelsapp.us.auth0.com'
+};
+
 //Passport
 // environment variables
 var dotenv = require('dotenv');
@@ -44,39 +76,7 @@ var authRouter = require('./routes/auth');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-
-//express-session
-var sess = {
-    secret: '48cfcd06293d3bbcb116a591526f9d5acae6ab0b2aafdaf1185da9652f8574a4',
-    cookie: {},
-    resave: false,
-    saveUninitialized: true
-};
-if (app.get('env') === 'production') {
-    // Use secure cookies in production (requires SSL/TLS)
-    sess.cookie.secure = true;
-    
-    // Uncomment the line below if your application is behind a proxy (like on Heroku)
-    // or if you're encountering the error message:
-    // "Unable to verify authorization request state"
-    // app.set('trust proxy', 1);
-}
-
-//Auth0
-const { auth } = require('express-openid-connect');
-const { requiresAuth } = require('express-openid-connect');
-
-const config = {
-    authRequired: false,
-    auth0Logout: true,
-    secret: 'a long, randomly-generated string stored in env',
-    baseURL: 'https://levelsapp.herokuapp.com',
-    clientID: '7JUChbVDV0yWzajl4gOh2SOMIajPBlCE',
-    issuerBaseURL: 'https://levelsapp.us.auth0.com'
-};
-
 app.use(auth(config));
-
 
 app.set('view engine', 'ejs');
 app.use(session(sess));
