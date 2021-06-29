@@ -6,6 +6,8 @@ const path = require('path');
 const sassMiddleware = require('node-sass-middleware');
 const methodOverride = require('method-override');
 var session = require('express-session');
+var dotenv = require('dotenv');
+dotenv.config();
 
 
 
@@ -23,14 +25,12 @@ if (app.get('env') === 'production') {
     // Uncomment the line below if your application is behind a proxy (like on Heroku)
     // or if you're encountering the error message:
     // "Unable to verify authorization request state"
-    // app.set('trust proxy', 1);
+    app.set('trust proxy', 1);
 }
 
 //Auth0
 const { auth } = require('express-openid-connect');
 const { requiresAuth } = require('express-openid-connect');
-var dotenv = require('dotenv');
-dotenv.config();
 
 const config = {
     authRequired: false,
