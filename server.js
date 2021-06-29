@@ -33,7 +33,7 @@ const { requiresAuth } = require('express-openid-connect');
 const config = {
     authRequired: false,
     auth0Logout: true,
-    secret: 'a long, randomly-generated string stored in env',
+    secret: process.env.AUTH0_CLIENT_SECRET,
     baseURL: 'https://levelsapp.herokuapp.com',
     clientID: '7JUChbVDV0yWzajl4gOh2SOMIajPBlCE',
     issuerBaseURL: 'https://levelsapp.us.auth0.com'
