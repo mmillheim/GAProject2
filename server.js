@@ -29,6 +29,8 @@ if (app.get('env') === 'production') {
 //Auth0
 const { auth } = require('express-openid-connect');
 const { requiresAuth } = require('express-openid-connect');
+var dotenv = require('dotenv');
+dotenv.config();
 
 const config = {
     authRequired: false,
@@ -41,8 +43,6 @@ const config = {
 
 //Passport
 // environment variables
-var dotenv = require('dotenv');
-dotenv.config();
 //load
 var passport = require('passport');
 var Auth0Strategy = require('passport-auth0');
