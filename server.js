@@ -124,7 +124,7 @@ app.get('/', (req, res) => {
     if(req.oidc.isAuthenticated()){
         res.redirect('/items');
     } else {
-        res.render('index');
+        res.render('index', {locals: null});
     }
 });
 

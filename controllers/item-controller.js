@@ -12,7 +12,7 @@ const unitOfSaleOptions = ["each", "in", "ft", "yd", "mm", "cm", "m"]
 router.get('/', (req, res) => {
     Item.find({})
     .populate('vendor')
-    .then(items => res.render('item-index', {items}))
+    .then(items => res.render('item-index', {items, locals}))
     .catch(console.log)
 })
 
