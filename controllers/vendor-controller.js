@@ -24,18 +24,17 @@ router.get('/new', (req, res) => {
 //create
 router.post('/', (req, res) => {
     console.log(req.body)
-    // vendor.create({
-    //     description: req.body.description,
-    //     partNumber: req.body.partNumber || "?",
-    //     quantity: req.body.quantity || 0
-    // })
-    // .then(result => {
-    //     res.redirect('/vendors')
-    // })
-    // .catch(err => {
-    //     console.log(err)
-    //     res.send("unable to create vendor")
-    // })
+    Vendor.create({
+        name: req.body.name,
+        URL: req.body.URL
+    })
+    .then(result => {
+        res.redirect('/vendors')
+    })
+    .catch(err => {
+        console.log(err)
+        res.send("unable to create vendor")
+    })
 
 })
 
