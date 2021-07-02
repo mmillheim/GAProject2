@@ -121,7 +121,11 @@ app.get('/profile', requiresAuth(), (req, res) => {
 });
 
 app.get('/', (req, res) => {
-    res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
+    if(req.oidc.isAuthenticated()){
+        res.redirect('/items');
+    } else {
+        res.redirect('/index');
+    }
 });
 
 app.listen(app.get("port"), () => {
