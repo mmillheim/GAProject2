@@ -32,12 +32,8 @@
                 Account
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <% if(locals.user){%>
-                  <li><a class="dropdown-item" href="/user">Profile</a></li>
-                  <li><a class="dropdown-item" href="/logout">Log Out</a></li>
-                <%} else { %>
                   <li><a class="dropdown-item" href="/login">Log In</a></li>
-                <%}%>
+                  <li><a class="dropdown-item" href="/logout">Log Out</a></li>
               </ul>
             </li>
           </ul>
@@ -45,8 +41,6 @@
       </div>
     </nav>
     <div class="container">
-
-      <%=locals.user %>
         <%- body %>
       </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>

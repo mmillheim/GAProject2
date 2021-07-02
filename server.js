@@ -103,18 +103,18 @@ const { stringify } = require('querystring');
 app.use('/items', itemController)
 app.use('/vendors', vendorController)
 
-app.get('/welcome', (req, res) => {
-    res.send('welcome')
-});
-
-// app.get('/login', (req, res) => {
-//     res.send("Please Log In")
-// })
-
 app.use(userInViews());
 app.use('/', authRouter);
 app.use('/', indexRouter);
 app.use('/', usersRouter);
+
+app.get('/welcome', (req, res) => {
+    res.send('welcome')
+});
+// app.get('/login', (req, res) => {
+//     res.send("Please Log In")
+// })
+
 
 app.get('/profile', requiresAuth(), (req, res) => {
     res.send(JSON.stringify(req.oidc.user));
@@ -124,7 +124,7 @@ app.get('/', (req, res) => {
     if(req.oidc.isAuthenticated()){
         res.redirect('/items');
     } else {
-        res.render('index', {locals: null});
+        res.render('index');
     }
 });
 
