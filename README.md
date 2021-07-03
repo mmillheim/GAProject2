@@ -17,24 +17,19 @@ The initial screen lists all items in the system with their quantites and vendor
 As part of the of design process I created user stories to frame up what capabilities I would like to add to the app. They are divided into *Minimum Viable Product (MVP)* and *Stretch Goals*.
 
 #### MVP:
-At it's bare mininum the app should...
-- display a list with the inventory levels for all items
-- display a list with all vendors
-- allow CRUD on all items and vendors
+Users should be able to create, view, edit and delete items.
+Users should be able to create, view, edit and delete vendors.
+Users should be able to associate items with vendors
 
 #### Stretch Goals:
-- add support for transaction tracking
-- add support for entering purchase orders
-- user authentication
-- ability to have more than one company / inventory
-- assigning users to a specific company
+Users should be able add transactions to track changes to item quantities.
+Users should be able to create purchase orders for ordering more items.
+Users should be able to create user accounts and log in 
 
 
 
 ### Initial Mockup:
-
-
-## Development Process
+![image of initial wireframe](images/wireframe.png)
 
 ### Technologies Used
 I used the following technologies to build this app...
@@ -42,9 +37,12 @@ I used the following technologies to build this app...
 - ***Bootstrap*** for styling
 - ***Express and Node*** for the middleware
 - ***MongoDB*** for the database
+- ***Auth0*** for user authentication
 
+![image of the levels web app](images/itemView.png)
 
-### Refinement
 
 
 ### Unsolved Problems and Next Steps
+
+I struggled implementing the user authentication. There are no user profiles or user management built into the app. I would like to improve this. I would like to add transactions and purchase orders, as well as, the ability to create multiple companies and assign users to them.
